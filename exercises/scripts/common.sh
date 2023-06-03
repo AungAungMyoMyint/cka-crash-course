@@ -10,7 +10,7 @@ echo "deb  http://apt.kubernetes.io/  kubernetes-xenial  main" > /etc/apt/source
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-sudo apt-get install -y vim net-tools docker-ce avahi-daemon libnss-mdns traceroute htop httpie bash-completion kubeadm=$K8S_VERSION kubelet=$K8S_VERSION kubectl=$K8S_VERSION
+sudo apt-get install -y vim net-tools docker-ce avahi-daemon libnss-mdns traceroute htop httpie bash-completion kubeadm=$K8S_VERSION kubelet=$K8S_VERSION kubectl=$K8S_VERSION > /dev/null 2>&1
 
 sudo usermod -aG docker ${USER}
 
